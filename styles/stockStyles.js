@@ -29,9 +29,9 @@ export const HeaderView = styled.View`
     padding-top: 40px;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
 `;
 
 export const HeaderTitle = styled.Text`
@@ -40,6 +40,7 @@ export const HeaderTitle = styled.Text`
     color: ${cores.terciaria};
     letter-spacing: 2px;
     font-style: italic;
+    padding-top: 20px;
 `;
 
 export const HeaderButton = styled.TouchableOpacity`
@@ -47,6 +48,22 @@ export const HeaderButton = styled.TouchableOpacity`
     color: ${cores.terciaria};
 `;
 
+//Listas
+export const ListView = styled.TouchableHighlight`
+    background-color: ${cores.secundaria};
+    min-height: 85px;
+    width: 100%;
+    padding: 15px;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    border-radius: 10px;
+`;
+//Textos
+export const StocksText = styled.Text`
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: ${cores.terciaria};
+`;
 
 
 
