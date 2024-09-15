@@ -9,7 +9,9 @@ export const cores= {
     primaria: "#190019",
     secundaria: "#2B124C",
     terciaria: "#FBE4D8",
-    alternativa: "DFB6B2",
+    alternativa: "#DFB6B2",
+    perigo: "#B85C48",
+    //adicionar cor de fundo para o lixo
 };
 //Container
 
@@ -58,12 +60,47 @@ export const ListView = styled.TouchableHighlight`
     margin-bottom: 15px;
     border-radius: 10px;
 `;
+
+export const ListViewHidden = styled.View`
+    background-color: ${cores.terciaria};
+    min-height: 85px;
+    width: 100%;
+    padding: 25px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 11px;
+`;
+
 //Textos
 export const StocksText = styled.Text`
     font-size: 16px;
     letter-spacing: 1px;
     color: ${cores.terciaria};
 `;
+
+export const SwipedStockText = styled(StocksText)`
+    color: ${cores.alternativa};
+    font-style: italic;
+    text-decoration: line-through;
+`;
+
+//Botão
+export const HiddenButtonTrash = styled.TouchableOpacity`
+    width: 25px;
+    align-items: start;
+    //justify-content: start;
+    //flex-direction: row;
+`;
+export const HiddenButtonEye = styled.TouchableOpacity`
+    width: 25px;
+    align-items: end;
+    //justify-content: space-between;
+    //flex-direction: row;
+    
+`;
+
 
 
 

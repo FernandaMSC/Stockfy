@@ -16,6 +16,24 @@ const Base = () => {
     }, {
         title: "Terceiro Stock",
         key: "3"
+    }, {
+        title: "Quarto Stock",
+        key: "4"
+    }, {
+        title: "Quinto Stock",
+        key: "5"
+    }, {
+        title: "Sexto Stock",
+        key: "6"
+    }, {
+        title: "Setimo Stock",
+        key: "7"
+    }, {
+        title: "Oitavo Stock",
+        key: "8"
+    }, {
+        title: "Nono Stock",
+        key: "9"
     }]
 
     const [stocks, setStocks] = useState(primeirosStocks);
