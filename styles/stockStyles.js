@@ -8,7 +8,7 @@ import { setStatusBarBackgroundColor } from "expo-status-bar";
 export const cores= {
     primaria: "#190019",
     secundaria: "#2B124C",
-    terciaria: "FBE4D8",
+    terciaria: "#FBE4D8",
     alternativa: "DFB6B2",
 };
 //Container
@@ -23,7 +23,29 @@ export const Container = styled.SafeAreaView`
     padding-top: ${statusBarHeight}px;
     `;
 
+//Header
 
+export const HeaderView = styled.View`
+    padding-top: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const HeaderTitle = styled.Text`
+    font-size: 35px;
+    font-weight: bold;
+    color: ${cores.terciaria};
+    letter-spacing: 2px;
+    font-style: italic;
+`;
+
+export const HeaderButton = styled.TouchableOpacity`
+    font-weight: bold;
+    color: ${cores.terciaria};
+`;
 
 
 
