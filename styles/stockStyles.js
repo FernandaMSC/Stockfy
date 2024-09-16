@@ -51,6 +51,12 @@ export const HeaderButton = styled.TouchableOpacity`
 `;
 
 //Listas
+
+//Ajeita o texto dentro da lista
+
+//Abrir outro componente que vai ser o que vai ser imputado. Alinhar a direita ou centralizar. 
+//Procurar como colocar imagens nos itens da lista
+
 export const ListView = styled.TouchableHighlight`
     background-color: ${cores.secundaria};
     min-height: 85px;
@@ -60,6 +66,7 @@ export const ListView = styled.TouchableHighlight`
     margin-bottom: 15px;
     border-radius: 10px;
 `;
+
 
 export const ListViewHidden = styled.View`
     background-color: ${cores.terciaria};

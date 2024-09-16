@@ -28,6 +28,7 @@ const ListaStocks = ({stocks, setStocks}) => {
                     <ListView>
                         <>
                             <StocksText>{data.item.title}</StocksText>
+                            <StocksText>{data.item.quantidade}</StocksText>
                         </>
                     </ListView>
                 )

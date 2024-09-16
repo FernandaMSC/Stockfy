@@ -8,8 +8,10 @@ import InputModal from './inputModal.js';
 
 const Base = () => {
 
+    //Adicionar campo fixo e campo mutável. Ver como formatar elementos no stockStyles
     const primeirosStocks = [{
-        title: "Primeiro Stock",
+        title: "Nome: Primeiro Stock",
+        quantidade: "Quantidade: 3",
         key: "1"
     }, {
         title: "Segundo Stock",
@@ -39,6 +41,10 @@ const Base = () => {
 
     const [stocks, setStocks] = useState(primeirosStocks);
 
+    //Visibilidade do Modal
+    const [modalVisible, setModalVisible] = useState(false);
+
+
 
     return (
         <>
@@ -47,7 +53,10 @@ const Base = () => {
                 stocks={stocks} 
                 setStocks={setStocks}
             />
-            <InputModal/>
+            <InputModal
+                modalVisible = {modalVisible}
+                setModalVisible = {setModalVisible}
+            />
         </>
     );
 }

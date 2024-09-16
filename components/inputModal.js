@@ -8,7 +8,13 @@ import { ModalButton, ModalContainer, ModalView, StyledInput, ModalAction, Modal
 import {AntDesign} from '@expo/vector-icons';
 
 
-const InputModal = () => {
+const InputModal = (modalVisible, setModalVisible) => {
+
+    const handleCloseModal = () =>{
+        setModalVisible(false);
+        
+    }
+
     return (
         <>
             <ModalButton onPress={() => {}}>
@@ -18,7 +24,8 @@ const InputModal = () => {
             <Modal 
                 animationType="slide"
                 transparent={true}
-            
+                visible={modalVisible}
+                onRequestClose={handleCloseModal}
             >
                 
             </Modal>
