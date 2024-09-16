@@ -101,6 +101,63 @@ export const HiddenButtonEye = styled.TouchableOpacity`
     
 `;
 
+// ModalActionGroup, ModalIcon, HeaderTitle
 
+//Modal
+export const ModalContainer = styled.View`
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: ${cores.primaria};
+`;
 
+export const ModalView = styled.View`
+    background-color: ${cores.secundaria};
+    border-radius: 20px;
+    padding: 35px;
+`;
 
+export const ModalButton = styled.TouchableOpacity`
+    width: 60px;
+    height: 60px;
+    background-color: ${cores.terciaria};
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    position: absolute;
+    bottom: 40px;
+`;
+
+export const StyledInput = styled.TextInput`
+    width: 300px;
+    height: 50px;
+    background-color: ${cores.terciaria};
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: ${cores.secundaria};
+    letter-spacing: 1px;
+`;
+
+export const ModalAction = styled.TouchableOpacity`
+    width: 60px;
+    height: 60px;
+    background-color: ${(props) => props.color};
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+`;
+
+export const ModalActionGroup = styled.View`
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+`;
+
+export const ModalIcon = styled.View`
+    align-items: center;
+    margin-bottom: 30px;
+`;

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 //Componentes
 import Header from "./Header.js";
 import ListaStocks from "./listaStocks.js";
+import InputModal from './inputModal.js';
 
 
 const Base = () => {
@@ -46,6 +47,7 @@ const Base = () => {
                 stocks={stocks} 
                 setStocks={setStocks}
             />
+            <InputModal/>
         </>
     );
 }
