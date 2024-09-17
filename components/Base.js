@@ -10,33 +10,53 @@ const Base = () => {
 
     //Adicionar campo fixo e campo mutável. Ver como formatar elementos no stockStyles
     const primeirosStocks = [{
-        title: "Nome: Primeiro Stock",
-        quantidade: "Quantidade: 3",
-        key: "1"
+        title: "Nome:",
+        quantidade: "Quantidade:",
+        key: "1",
+        produto: "Primeiro Stock lalalalaalala",
+        estoque: 4
+        
     }, {
-        title: "Segundo Stock",
-        key: "2"
+        title: "Nome",
+        quantidade: "Quantidade:",
+        key: "2",
+        produto: "Primeiro Stock",
+        estoque: 4
     }, {
         title: "Terceiro Stock",
-        key: "3"
+        key: "3",
+        produto: "Primeiro Stock",
+        estoque: 4
     }, {
         title: "Quarto Stock",
-        key: "4"
+        key: "4",
+        produto: "Primeiro Stock",
+        estoque: 4
     }, {
         title: "Quinto Stock",
-        key: "5"
+        key: "5",
+        produto: "Primeiro Stock",
+        estoque: 4
     }, {
         title: "Sexto Stock",
-        key: "6"
+        key: "6",
+        produto: "Primeiro Stock",
+        estoque: 4
     }, {
         title: "Setimo Stock",
-        key: "7"
+        key: "7",
+        produto: "Primeiro Stock",
+        estoque: 4
     }, {
         title: "Oitavo Stock",
-        key: "8"
+        key: "8",
+        produto: "Primeiro Stock",
+        estoque: 4
     }, {
         title: "Nono Stock",
-        key: "9"
+        key: "9",
+        produto: "Primeiro Stock",
+        estoque: 4
     }]
 
     const [stocks, setStocks] = useState(primeirosStocks);

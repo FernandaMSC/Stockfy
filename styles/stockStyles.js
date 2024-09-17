@@ -61,12 +61,37 @@ export const ListView = styled.TouchableHighlight`
     background-color: ${cores.secundaria};
     min-height: 85px;
     width: 100%;
-    padding: 15px;
+    padding: 5px;
+    flex-direction: row;
     justify-content: space-around;
     margin-bottom: 15px;
     border-radius: 10px;
 `;
 
+
+//View 2 de teste
+export const ListInputView = styled.View`
+    min-height: 40px;
+    width: 50%;
+    padding: 10px;
+   //flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 5px;
+    border-radius: 5px;
+`;
+    
+export const ListConstView = styled.View`
+    min-height: 40px;
+    width: 40%;
+    padding: 10px;
+    //flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    margin-bottom: 5px;
+    border-radius: 5px;
+`;
+//fim view 2 de teste
 
 export const ListViewHidden = styled.View`
     background-color: ${cores.terciaria};
@@ -81,11 +106,20 @@ export const ListViewHidden = styled.View`
 `;
 
 //Textos
+//Esse vai ser usado para o constante
 export const StocksText = styled.Text`
     font-size: 16px;
     letter-spacing: 1px;
     color: ${cores.terciaria};
 `;
+
+//Esse vai ser usado para o teste a ser inputado
+export const StocksInputText = styled.Text`
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: ${cores.terciaria};
+`;
+//Fim teste.Talvez apagar depois
 
 export const SwipedStockText = styled(StocksText)`
     color: ${cores.alternativa};

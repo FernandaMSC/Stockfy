@@ -6,7 +6,7 @@ import {Octicons} from "@expo/vector-icons";
 import {MaterialCommunityIcons} from "@expo/vector-icons";
 
 //styled components
-import {ListView, ListViewHidden, StocksText, SwipedStockText, HiddenButtonTrash, HiddenButtonEye, cores} from "../styles/stockStyles";
+import {ListView, ListViewHidden, StocksText, SwipedStockText, HiddenButtonTrash, HiddenButtonEye, cores, StocksInputText, ListInputView, ListConstView} from "../styles/stockStyles";
 
 
 
@@ -27,8 +27,15 @@ const ListaStocks = ({stocks, setStocks}) => {
                 return (
                     <ListView>
                         <>
-                            <StocksText>{data.item.title}</StocksText>
-                            <StocksText>{data.item.quantidade}</StocksText>
+                            <ListConstView>
+                                <StocksText>{data.item.title}</StocksText>
+                                <StocksText>{data.item.quantidade}</StocksText>
+                            </ListConstView>
+                            <ListInputView>
+                                <StocksInputText>{data.item.produto}</StocksInputText>
+                                <StocksInputText>{data.item.estoque}</StocksInputText>
+                            </ListInputView>
+
                         </>
                     </ListView>
                 )
