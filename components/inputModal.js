@@ -8,7 +8,7 @@ import { ModalButton, ModalContainer, ModalView, StyledInput, ModalAction, Modal
 import {AntDesign} from '@expo/vector-icons';
 
 
-const InputModal = (modalVisible, setModalVisible) => {
+const InputModal = (modalVisible, setModalVisible, stockInputValue, setStockInputValue) => {
 
     const handleCloseModal = () =>{
         setModalVisible(false);
@@ -27,7 +27,19 @@ const InputModal = (modalVisible, setModalVisible) => {
                 visible={modalVisible}
                 onRequestClose={handleCloseModal}
             >
-                
+                <ModalContainer>
+                    <ModalIcon>
+                    <AntDesign name="edit" size={30} color={cores.terciaria}/>
+                    </ModalIcon>
+
+                    <StyledInput
+                        placeholder="Add a stock"
+                        placeholderTextColor={cores.alternativa}
+                        selectionColor={cores.secundaria}
+                        autoFocus={true}
+                        onChangeText={(text) => setStockInputValue(text)}
+                    />
+                </ModalContainer>
             </Modal>
         
         </>

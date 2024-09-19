@@ -13,7 +13,7 @@ const Base = () => {
         title: "Nome:",
         quantidade: "Quantidade:",
         key: "1",
-        produto: "Primeiro Stock lalalalaalala",
+        produto: "Primeiro produto",
         estoque: 4
         
     }, {
@@ -61,9 +61,9 @@ const Base = () => {
 
     const [stocks, setStocks] = useState(primeirosStocks);
 
-    //Visibilidade do Modal
+    //Visibilidade do Modal e input value
     const [modalVisible, setModalVisible] = useState(false);
-
+    const [stockInputValue, setStockInputValue] = useState();
 
 
     return (
@@ -76,6 +76,8 @@ const Base = () => {
             <InputModal
                 modalVisible = {modalVisible}
                 setModalVisible = {setModalVisible}
+                stockInputValue = {stockInputValue}
+                setStockInputValue = {setStockInputValue}
             />
         </>
     );
