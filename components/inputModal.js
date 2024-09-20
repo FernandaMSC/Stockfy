@@ -8,16 +8,29 @@ import { ModalButton, ModalContainer, ModalView, StyledInput, ModalAction, Modal
 import {AntDesign} from '@expo/vector-icons';
 
 
-const InputModal = (modalVisible, setModalVisible, stockInputValue, setStockInputValue) => {
+const InputModal = ({modalVisible, setModalVisible, stockInputNome, setStockInputNome, setStockInputUnid, stockInputUnid, handleAddStock, stocks}) => {
 
-    const handleCloseModal = () =>{
+    const handleCloseModal = () => {
         setModalVisible(false);
         
-    }
+    };
+
+    const handleSubmit = () => {
+        //alert("Submitted");
+        handleAddStock({
+            title: "Nome:",
+            quantidade: "Quantidade",
+            produto: stockInputNome,
+            estoque: stockInputUnid,
+            key: `${(stocks[stocks.length-1] && parseInt(stocks[stocks.length -1].key) + 1) || 1 }`
+        });
+        setStockInputNome("");
+        setStockInputUnid("");
+    };
 
     return (
         <>
-            <ModalButton onPress={() => {}}>
+            <ModalButton onPress={() => {setModalVisible(true)}}>
                 <AntDesign name="plus" size={30} color={cores.secundaria}/>
             </ModalButton>
 
@@ -28,22 +41,49 @@ const InputModal = (modalVisible, setModalVisible, stockInputValue, setStockInpu
                 onRequestClose={handleCloseModal}
             >
                 <ModalContainer>
-                    <ModalIcon>
-                    <AntDesign name="edit" size={30} color={cores.terciaria}/>
-                    </ModalIcon>
+                    <ModalView>
+                        <ModalIcon>
+                            <HeaderTitle>Produto</HeaderTitle>
+                            <AntDesign name="edit" size={30} color={cores.terciaria}/>
+                        </ModalIcon>
 
-                    <StyledInput
-                        placeholder="Add a stock"
-                        placeholderTextColor={cores.alternativa}
-                        selectionColor={cores.secundaria}
-                        autoFocus={true}
-                        onChangeText={(text) => setStockInputValue(text)}
-                    />
+                        <StyledInput
+                            placeholder="Nome do produto"
+                            placeholderTextColor={cores.alternativa}
+                            selectionColor={cores.secundaria}
+                            autoFocus={true}
+                            onChangeText={(text) => setStockInputNome(text)}
+                            value={stockInputNome}
+                            onSubmitEditing={handleSubmit}
+                            
+                        />
+                        <StyledInput
+                            placeholder="Quantidade"
+                            placeholderTextColor={cores.alternativa}
+                            selectionColor={cores.secundaria}
+                            autoFocus={true}
+                            onChangeText={(text) => setStockInputUnid(text)}
+                            value={stockInputUnid}
+                            onSubmitEditing={handleSubmit}
+                            
+                        />
+
+                        <ModalActionGroup>
+                            <ModalAction color={cores.primaria} onPress={handleCloseModal} > 
+                                <AntDesign name="close" size={28} color={cores.terciaria}/>
+
+                            </ModalAction>
+                            <ModalAction color={cores.terciaria} onPress={handleSubmit} >
+                                <AntDesign name="check" size={28} color={cores.secundaria}/>
+
+                            </ModalAction>
+                        </ModalActionGroup>
+                    </ModalView>
                 </ModalContainer>
             </Modal>
         
         </>
     )
-}
+};
 
 export default InputModal; 

@@ -20,7 +20,7 @@ const statusBarHeight = Constants.statusBarHeight;
 export const Container = styled.SafeAreaView`
     background-color: ${cores.primaria};
     padding: 20px;
-    padding-bottom: 0px;
+    padding-bottom: 110px;
     flex: 1;
     padding-top: ${statusBarHeight}px;
     `;
@@ -157,6 +157,7 @@ export const ModalView = styled.View`
     background-color: ${cores.secundaria};
     border-radius: 20px;
     padding: 35px;
+    gap: 15px;
 `;
 
 export const ModalButton = styled.TouchableOpacity`

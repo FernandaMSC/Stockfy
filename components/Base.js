@@ -20,40 +20,47 @@ const Base = () => {
         title: "Nome",
         quantidade: "Quantidade:",
         key: "2",
-        produto: "Primeiro Stock",
-        estoque: 4
+        produto: "segundo Stock",
+        estoque: 2
     }, {
-        title: "Terceiro Stock",
+        title: "Nome",
+        quantidade: "Quantidade:",
         key: "3",
-        produto: "Primeiro Stock",
+        produto: "Terceiro Stock",
         estoque: 4
     }, {
-        title: "Quarto Stock",
+        title: "Nome",
+        quantidade: "Quantidade:",
         key: "4",
         produto: "Primeiro Stock",
         estoque: 4
     }, {
-        title: "Quinto Stock",
+        title: "Nome",
+        quantidade: "Quantidade:",
         key: "5",
         produto: "Primeiro Stock",
         estoque: 4
     }, {
-        title: "Sexto Stock",
+        title: "Nome",
+        quantidade: "Quantidade:",
         key: "6",
         produto: "Primeiro Stock",
         estoque: 4
     }, {
-        title: "Setimo Stock",
+        title: "Nome",
+        quantidade: "Quantidade:",
         key: "7",
         produto: "Primeiro Stock",
         estoque: 4
     }, {
-        title: "Oitavo Stock",
+        title: "Nome",
+        quantidade: "Quantidade:",
         key: "8",
         produto: "Primeiro Stock",
         estoque: 4
     }, {
-        title: "Nono Stock",
+        title: "Nome",
+        quantidade: "Quantidade:",
         key: "9",
         produto: "Primeiro Stock",
         estoque: 4
@@ -63,8 +70,16 @@ const Base = () => {
 
     //Visibilidade do Modal e input value
     const [modalVisible, setModalVisible] = useState(false);
-    const [stockInputValue, setStockInputValue] = useState();
+    const [stockInputNome, setStockInputNome] = useState();
+    const [stockInputUnid, setStockInputUnid] = useState();
 
+    //Função para adicionar um produto no estoque
+    const handleAddStock = (stock) => {
+        const novoStock = [...stocks, stock];
+        setStocks(novoStock);
+        setModalVisible(false);
+
+    }
 
     return (
         <>
@@ -76,8 +91,12 @@ const Base = () => {
             <InputModal
                 modalVisible = {modalVisible}
                 setModalVisible = {setModalVisible}
-                stockInputValue = {stockInputValue}
-                setStockInputValue = {setStockInputValue}
+                stockInputNome = {stockInputNome}
+                stockInputUnid = {stockInputUnid}
+                setStockInputNome = {setStockInputNome}
+                setStockInputUnid = {setStockInputUnid}
+                handleAddStock= {handleAddStock}
+                stocks={stocks}
             />
         </>
     );
