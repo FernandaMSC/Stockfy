@@ -17,49 +17,49 @@ const Base = () => {
         estoque: 4
         
     }, {
-        title: "Nome",
+        title: "Nome:",
         quantidade: "Quantidade:",
         key: "2",
         produto: "segundo Stock",
         estoque: 2
     }, {
-        title: "Nome",
+        title: "Nome:",
         quantidade: "Quantidade:",
         key: "3",
         produto: "Terceiro Stock",
         estoque: 4
     }, {
-        title: "Nome",
+        title: "Nome:",
         quantidade: "Quantidade:",
         key: "4",
         produto: "Primeiro Stock",
         estoque: 4
     }, {
-        title: "Nome",
+        title: "Nome:",
         quantidade: "Quantidade:",
         key: "5",
         produto: "Primeiro Stock",
         estoque: 4
     }, {
-        title: "Nome",
+        title: "Nome:",
         quantidade: "Quantidade:",
         key: "6",
         produto: "Primeiro Stock",
         estoque: 4
     }, {
-        title: "Nome",
+        title: "Nome:",
         quantidade: "Quantidade:",
         key: "7",
         produto: "Primeiro Stock",
         estoque: 4
     }, {
-        title: "Nome",
+        title: "Nome:",
         quantidade: "Quantidade:",
         key: "8",
         produto: "Primeiro Stock",
         estoque: 4
     }, {
-        title: "Nome",
+        title: "Nome:",
         quantidade: "Quantidade:",
         key: "9",
         produto: "Primeiro Stock",

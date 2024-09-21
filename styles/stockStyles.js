@@ -6,10 +6,10 @@ import { setStatusBarBackgroundColor } from "expo-status-bar";
 //Cores de teste
 
 export const cores= {
-    primaria: "#190019",
-    secundaria: "#2B124C",
-    terciaria: "#FBE4D8",
-    alternativa: "#DFB6B2",
+    primaria: "#15224a",
+    secundaria: "#536791",
+    terciaria: "#BAD0E7",
+    alternativa: "#B3C1DC",
     perigo: "#B85C48",
     //adicionar cor de fundo para o lixo
 };
