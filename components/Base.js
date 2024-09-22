@@ -81,12 +81,17 @@ const Base = () => {
 
     }
 
+    const handleTriggerEdit = (item) => {
+        alert('funcionou'); 
+    }
+
     return (
         <>
             <Header/>
             <ListaStocks
                 stocks={stocks} 
                 setStocks={setStocks}
+                handleTriggerEdit={handleTriggerEdit}
             />
             <InputModal
                 modalVisible = {modalVisible}

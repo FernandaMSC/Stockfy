@@ -12,14 +12,15 @@ const InputModal = ({modalVisible, setModalVisible, stockInputNome, setStockInpu
 
     const handleCloseModal = () => {
         setModalVisible(false);
-        
+        setStockInputNome("");
+        setStockInputUnid("");
     };
 
     const handleSubmit = () => {
         //alert("Submitted");
         handleAddStock({
             title: "Nome:",
-            quantidade: "Quantidade",
+            quantidade: "Quantidade:",
             produto: stockInputNome,
             estoque: stockInputUnid,
             key: `${(stocks[stocks.length-1] && parseInt(stocks[stocks.length -1].key) + 1) || 1 }`

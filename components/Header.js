@@ -10,7 +10,7 @@ const Header = () => {
             <HeaderButton>
                 <FontAwesome name="user-circle" size={25} color={cores.terciaria}/>
             </HeaderButton>
-            <HeaderTitle>Meus Stocks</HeaderTitle>
+            <HeaderTitle>Meu Stock</HeaderTitle>
         </HeaderView>
     );
 }

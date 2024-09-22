@@ -11,7 +11,7 @@ import {ListView, ListViewHidden, StocksText, SwipedStockText, HiddenButtonTrash
 
 
 
-const ListaStocks = ({stocks, setStocks}) => {
+const ListaStocks = ({stocks, setStocks, handleTriggerEdit}) => {
 
     const handleDeleteStocks = (rowMap, rowKey) => {
         const newStocks = [...stocks];
@@ -48,8 +48,10 @@ const ListaStocks = ({stocks, setStocks}) => {
                         >
                             <Octicons name="trash" size={25} color={cores.perigo}/>   
                         </HiddenButtonTrash>
-                        <HiddenButtonEye> 
-                            <MaterialCommunityIcons name="eye-outline" size={25} color={cores.secundaria}/>   
+                        <HiddenButtonEye
+                            onPress={() => handleTriggerEdit(data.item)}
+                        > 
+                            <MaterialCommunityIcons name="eye-outline" size={30} color={cores.secundaria}/>   
                         </HiddenButtonEye>
                     </ListViewHidden>
                 )

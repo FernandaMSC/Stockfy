@@ -14,7 +14,7 @@ import {Container} from "./styles/stockStyles";
     <NavigationContainer>        
       <Container>
       <Base />
-      <StatusBar style="light" />
+      <StatusBar style="auto" />
     </Container>
     </NavigationContainer>
   );

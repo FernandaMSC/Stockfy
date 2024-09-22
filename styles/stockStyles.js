@@ -6,9 +6,9 @@ import { setStatusBarBackgroundColor } from "expo-status-bar";
 //Cores de teste
 
 export const cores= {
-    primaria: "#80221E",
-    secundaria: "#B85C48",
-    terciaria: "#D484A1",
+    primaria: "#D4B3A0",
+    secundaria: "#B85C46",
+    terciaria: "#591613",
     alternativa: "#CABCAB",
     perigo: "#B85C48",
     //adicionar cor de fundo para o lixo
@@ -109,6 +109,7 @@ export const ListViewHidden = styled.View`
 //Esse vai ser usado para o constante
 export const StocksText = styled.Text`
     font-size: 16px;
+    font-weight: bold;
     letter-spacing: 1px;
     color: ${cores.terciaria};
 `;
@@ -116,8 +117,9 @@ export const StocksText = styled.Text`
 //Esse vai ser usado para o teste a ser inputado
 export const StocksInputText = styled.Text`
     font-size: 16px;
+    font-weight: bold;
     letter-spacing: 1px;
-    color: ${cores.terciaria};
+    color: ${cores.primaria};
 `;
 //Fim teste.Talvez apagar depois
 
@@ -135,7 +137,7 @@ export const HiddenButtonTrash = styled.TouchableOpacity`
     //flex-direction: row;
 `;
 export const HiddenButtonEye = styled.TouchableOpacity`
-    width: 25px;
+    width: 30px;
     align-items: end;
     //justify-content: space-between;
     //flex-direction: row;
