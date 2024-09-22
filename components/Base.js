@@ -79,11 +79,30 @@ const Base = () => {
         setStocks(novoStock);
         setModalVisible(false);
 
-    }
+    };
+
+    //Edição
+    const [stockASerEditado, setstockASerEditado] = useState(null);
+
 
     const handleTriggerEdit = (item) => {
-        alert('funcionou'); 
+        //alert('funcionou');
+        setstockASerEditado(item);
+        setModalVisible(true);
+        setStockInputNome(item.produto);
+        setStockInputUnid(item.estoque);
+        
+    };
+
+    const handleEditStock = (stockEditado) => {
+        const novoStock = [...stocks];
+        const stockIndex = stocks.findIndex((stock) => stock.key === stockEditado.key);
+        novoStock.splice(stockIndex, 1, stockEditado);
+        setStocks(novoStock);
+        setstockASerEditado(null);
+        setModalVisible(false);
     }
+
 
     return (
         <>
@@ -94,13 +113,16 @@ const Base = () => {
                 handleTriggerEdit={handleTriggerEdit}
             />
             <InputModal
-                modalVisible = {modalVisible}
-                setModalVisible = {setModalVisible}
-                stockInputNome = {stockInputNome}
-                stockInputUnid = {stockInputUnid}
-                setStockInputNome = {setStockInputNome}
-                setStockInputUnid = {setStockInputUnid}
-                handleAddStock= {handleAddStock}
+                modalVisible={modalVisible}
+                setModalVisible={setModalVisible}
+                stockInputNome={stockInputNome}
+                stockInputUnid={stockInputUnid}
+                setStockInputNome={setStockInputNome}
+                setStockInputUnid={setStockInputUnid}
+                handleAddStock={handleAddStock}
+                stockASerEditado={stockASerEditado}
+                setstockASerEditado={setstockASerEditado}
+                handleEditStock={handleEditStock}
                 stocks={stocks}
             />
         </>

@@ -8,23 +8,37 @@ import { ModalButton, ModalContainer, ModalView, StyledInput, ModalAction, Modal
 import {AntDesign} from '@expo/vector-icons';
 
 
-const InputModal = ({modalVisible, setModalVisible, stockInputNome, setStockInputNome, setStockInputUnid, stockInputUnid, handleAddStock, stocks}) => {
+const InputModal = ({modalVisible, setModalVisible, stockInputNome, setStockInputNome, setStockInputUnid, stockInputUnid, handleAddStock, stockASerEditado, setstockASerEditado, handleEditStock, stocks}) => {
 
     const handleCloseModal = () => {
         setModalVisible(false);
         setStockInputNome("");
         setStockInputUnid("");
+        setstockASerEditado(null);
     };
 
     const handleSubmit = () => {
+
+        if (!stockASerEditado){
+            handleAddStock({
+                title: "Nome:",
+                quantidade: "Quantidade:",
+                produto: stockInputNome,
+                estoque: stockInputUnid,
+                key: `${(stocks[stocks.length-1] && parseInt(stocks[stocks.length -1].key) + 1) || 1 }`
+            });
+        } else {
+            handleEditStock({
+                title: "Nome:",
+                quantidade: "Quantidade:",
+                produto: stockInputNome,
+                estoque: stockInputUnid,
+                key: stockASerEditado.key
+            })
+        }
         //alert("Submitted");
-        handleAddStock({
-            title: "Nome:",
-            quantidade: "Quantidade:",
-            produto: stockInputNome,
-            estoque: stockInputUnid,
-            key: `${(stocks[stocks.length-1] && parseInt(stocks[stocks.length -1].key) + 1) || 1 }`
-        });
+
+
         setStockInputNome("");
         setStockInputUnid("");
     };
