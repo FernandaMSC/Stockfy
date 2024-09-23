@@ -9,7 +9,14 @@ import Base from "./components/Base";
 import {Container} from "./styles/stockStyles";
 
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import AppLoanding from "expo-app-loading"; 
+
+
  export default function App() {
+  
+  const [ready, setReady] = useState(false);
+
   return (
     <NavigationContainer>        
       <Container>
@@ -28,4 +35,5 @@ import {Container} from "./styles/stockStyles";
    // justifyContent: 'center',
  // },
 //});
+
 
