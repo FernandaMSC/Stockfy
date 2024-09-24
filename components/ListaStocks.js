@@ -6,22 +6,29 @@ import {Octicons} from "@expo/vector-icons";
 import {MaterialCommunityIcons} from "@expo/vector-icons";
 
 //styled components
-import {ListView, ListViewHidden, StocksText, SwipedStockText, HiddenButtonTrash, HiddenButtonEye, cores, StocksInputText, ListInputView, ListConstView} from "../styles/stockStyles";
+import {ListView, ListViewHidden, StocksText, HiddenButtonTrash, HiddenButtonEye, cores, StocksInputText, ListInputView, ListConstView} from "../styles/stockStyles";
 
-
+//Persistencia de dados
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const ListaStocks = ({stocks, setStocks, handleTriggerEdit}) => {
 
     const handleDeleteStocks = (rowMap, rowKey) => {
-        const newStocks = [...stocks];
+        const novoStock = [...stocks];
         const stockIndex = stocks.findIndex((stock) => stock.key === rowKey);
-        newStocks.splice(stockIndex, 1); 
-        setStocks(newStocks);
-    }
+        novoStock.splice(stockIndex, 1); 
+
+        AsyncStorage.setItem("storedStocks", JSON.stringify(novoStock)).then(() => {
+            setStocks(novoStock);
+        }).catch(error => console.log(error));
+    };
 
     return (
-        <SwipeListView
+        <>
+        {stocks.length == 0 && <StocksText>Parece que não há nada nesse Stock ainda...</StocksText>}
+        {stocks.length != 0 && <SwipeListView
+        
             data={stocks}
             renderItem={(data) => {
                 return (
@@ -61,10 +68,11 @@ const ListaStocks = ({stocks, setStocks, handleTriggerEdit}) => {
             previewRowKey='1'
             previewOpenValue={80}
             previewOpenDelay={3000}
-           // disableLeftSwipe={true}
             showsVerticalScrollIndicator={false}
             style={(flex= 1, paddingBottom= 30, marginBottom= 40)}
-        />
+        />}
+        </>
+        
     );
 }
 

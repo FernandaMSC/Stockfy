@@ -36,7 +36,6 @@ const InputModal = ({modalVisible, setModalVisible, stockInputNome, setStockInpu
                 key: stockASerEditado.key
             })
         }
-        //alert("Submitted");
 
 
         setStockInputNome("");

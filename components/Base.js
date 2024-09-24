@@ -5,70 +5,12 @@ import Header from "./Header.js";
 import ListaStocks from "./listaStocks.js";
 import InputModal from './inputModal.js';
 
+//Persistencia de dados
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const Base = () => {
+const Base = ({stocks, setStocks}) => {
 
-    //Adicionar campo fixo e campo mutável. Ver como formatar elementos no stockStyles
-    const primeirosStocks = [{
-        title: "Nome:",
-        quantidade: "Quantidade:",
-        key: "1",
-        produto: "Primeiro produto",
-        estoque: 4
-        
-    }, {
-        title: "Nome:",
-        quantidade: "Quantidade:",
-        key: "2",
-        produto: "segundo Stock",
-        estoque: 2
-    }, {
-        title: "Nome:",
-        quantidade: "Quantidade:",
-        key: "3",
-        produto: "Terceiro Stock",
-        estoque: 4
-    }, {
-        title: "Nome:",
-        quantidade: "Quantidade:",
-        key: "4",
-        produto: "Primeiro Stock",
-        estoque: 4
-    }, {
-        title: "Nome:",
-        quantidade: "Quantidade:",
-        key: "5",
-        produto: "Primeiro Stock",
-        estoque: 4
-    }, {
-        title: "Nome:",
-        quantidade: "Quantidade:",
-        key: "6",
-        produto: "Primeiro Stock",
-        estoque: 4
-    }, {
-        title: "Nome:",
-        quantidade: "Quantidade:",
-        key: "7",
-        produto: "Primeiro Stock",
-        estoque: 4
-    }, {
-        title: "Nome:",
-        quantidade: "Quantidade:",
-        key: "8",
-        produto: "Primeiro Stock",
-        estoque: 4
-    }, {
-        title: "Nome:",
-        quantidade: "Quantidade:",
-        key: "9",
-        produto: "Primeiro Stock",
-        estoque: 4
-    }]
-
-    const [stocks, setStocks] = useState(primeirosStocks);
-
-    //Visibilidade do Modal e input value
+    //Visibilidade do Modal e input
     const [modalVisible, setModalVisible] = useState(false);
     const [stockInputNome, setStockInputNome] = useState();
     const [stockInputUnid, setStockInputUnid] = useState();
@@ -76,9 +18,11 @@ const Base = () => {
     //Função para adicionar um produto no estoque
     const handleAddStock = (stock) => {
         const novoStock = [...stocks, stock];
-        setStocks(novoStock);
-        setModalVisible(false);
-
+        
+        AsyncStorage.setItem("storedStocks", JSON.stringify(novoStock)).then(() => {
+            setStocks(novoStock);
+            setModalVisible(false);
+        }).catch(error => console.log(error));
     };
 
     //Edição
@@ -86,7 +30,6 @@ const Base = () => {
 
 
     const handleTriggerEdit = (item) => {
-        //alert('funcionou');
         setstockASerEditado(item);
         setModalVisible(true);
         setStockInputNome(item.produto);
@@ -98,11 +41,13 @@ const Base = () => {
         const novoStock = [...stocks];
         const stockIndex = stocks.findIndex((stock) => stock.key === stockEditado.key);
         novoStock.splice(stockIndex, 1, stockEditado);
-        setStocks(novoStock);
-        setstockASerEditado(null);
-        setModalVisible(false);
-    }
-
+       
+        AsyncStorage.setItem("storedStocks", JSON.stringify(novoStock)).then(() => {
+            setStocks(novoStock);
+            setModalVisible(false);
+            setstockASerEditado(null);
+        }).catch(error => console.log(error));
+    };
 
     return (
         <>
