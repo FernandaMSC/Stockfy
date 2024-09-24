@@ -18,10 +18,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon1.png",
         "backgroundColor": "#D4B3A0"
-      }
+      },
+      "package": "com.fefemsc.Stockfy"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "506377ec-8533-482e-8fbf-371b52b91eab"
+      }
+    },
+    "owner": "fefemsc"
   }
 }
